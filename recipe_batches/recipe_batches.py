@@ -3,7 +3,19 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  lowVal = 0
+  for k in recipe:
+    #print(k, v)
+    if k in ingredients:
+      ing = ingredients[k]
+      x = int(ing)//int(recipe[k])
+      #print('i am x',x)
+      if lowVal == 0 or x < lowVal:
+        lowVal = x
+    else:
+      return 0
+  return lowVal or 0
+
 
 
 if __name__ == '__main__':
